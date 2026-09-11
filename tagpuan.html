@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barangay Tagpu-an | Official Portal</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS VARIABLES & STYLES --- */
+        :root {
+            --primary-color: #1b4d3e;   /* Forest / Mountain Green */
+            --secondary-color: #d4af37; /* Gold Accent */
+            --dark-color: #2c3e50;
+            --white: #ffffff;
+            --gray-text: #2c3e50;
+            --font-family: 'Poppins', sans-serif;
+            
+            /* Glassmorphism Variables */
+            --glass-bg: rgba(255, 255, 255, 0.25);
+            --glass-bg-dark: rgba(27, 77, 62, 0.35);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            --glass-blur: blur(16px);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--dark-color);
+            line-height: 1.6;
+            /* Fixed background so liquid glass elements show content underneath */
+            background: linear-gradient(rgba(15, 35, 28, 0.65), rgba(15, 35, 28, 0.65)), 
+                        url('images/Tagpuan2.jpg') center/cover fixed no-repeat;
+            min-height: 100vh;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background: rgba(27, 77, 62, 0.55);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border-bottom: 1px solid var(--glass-border);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--glass-shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 5%;
+        }
+
+        /* Logo Link with Official Seal Image */
+        nav .logo-link {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        nav .logo-link:hover {
+            opacity: 0.9;
+        }
+
+        /* Official Seal Image Style */
+        .official-seal-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--secondary-color);
+            object-fit: cover;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+            background-color: var(--white);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+    height: 45vh; /* Reduced from 65vh */
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 30px 20px; /* Compact padding */
+    margin: 20px auto;
+    max-width: 850px; /* Narrower container width (reduced from 1100px) */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px; /* Slightly tighter corner rounding */
+    box-shadow: var(--glass-shadow);
+}
+
+.hero h1 {
+    font-size: 2.2rem; /* Reduced from 3rem */
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero p {
+    font-size: 1rem; /* Reduced from 1.2rem */
+    max-width: 520px;
+    margin-bottom: 18px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.btn {
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.85);
+    backdrop-filter: blur(4px);
+    color: var(--primary-color);
+    padding: 9px 22px; /* Smaller button padding */
+    font-size: 0.9rem; /* Slightly smaller button text */
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+        /* --- LAYOUT CONTAINER --- */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: 40px;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--secondary-color);
+        }
+
+        /* --- BARANGAY OFFICIALS SECTION --- */
+        .captain-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .official-card {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: var(--glass-shadow);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .official-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .official-card.captain {
+            width: 320px;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .official-avatar {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: rgba(220, 220, 220, 0.3);
+        }
+
+        .official-info {
+            padding: 20px 15px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .official-info h3 {
+            font-size: 1.15rem;
+            color: #0d231b;
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .official-badge {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(4px);
+            padding: 3px 12px;
+            border-radius: 15px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .official-card.captain .official-badge {
+            background: rgba(212, 175, 55, 0.3);
+            color: #4a3300;
+            border-color: var(--secondary-color);
+        }
+
+        .official-info p {
+            font-size: 0.85rem;
+            color: #1a3328;
+            font-weight: 500;
+        }
+
+        .officials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* --- HISTORY & ORIGINS --- */
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .history-card {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--glass-shadow);
+            border: 1px solid var(--glass-border);
+            transition: transform 0.3s ease;
+        }
+
+        .history-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .history-card h3 {
+            color: #0b241b;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.25rem;
+        }
+
+        .history-card p {
+            color: #1a3328;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* --- VISION & MISSION --- */
+        .vm-section {
+            background: var(--glass-bg-dark);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            color: var(--white);
+            padding: 60px 20px;
+            border-radius: 24px;
+            margin: 50px 0;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .vm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .vm-box {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .vm-box i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .vm-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- GALLERY SECTION --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--glass-shadow);
+            border: 1px solid var(--glass-border);
+            cursor: pointer;
+            height: 220px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: var(--white);
+            padding: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.85rem;
+            color: #ddd;
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            border: 1px solid var(--glass-border);
+        }
+
+        .lightbox-caption {
+            color: var(--white);
+            margin-top: 15px;
+            font-size: 1.1rem;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: var(--white);
+            font-size: 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .lightbox-close:hover {
+            color: var(--secondary-color);
+        }
+
+        /* --- POPULATION TRACKER STYLES --- */
+        .pop-container {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: var(--glass-shadow);
+            margin-bottom: 50px;
+        }
+
+        .pop-tracker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .pop-card {
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .pop-card i {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .pop-number {
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .pop-card label {
+            font-size: 0.9rem;
+            color: #1a3328;
+            font-weight: 600;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* Growth Bar Visualizer */
+        .growth-box {
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .growth-box h4 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #1a3328;
+        }
+
+        .progress-bg {
+            background: rgba(0, 0, 0, 0.1);
+            height: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 6px;
+            transition: width 1.5s ease-in-out;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- CONTACT & MAP --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-form {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #0d231b;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid var(--glass-border);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            border-radius: 10px;
+            font-family: inherit;
+            color: #0d231b;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(27, 77, 62, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .submit-btn:hover {
+            background: #13382d;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--glass-shadow);
+            border: 1px solid var(--glass-border);
+            height: 100%;
+            min-height: 350px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: rgba(15, 23, 30, 0.7);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border-top: 1px solid var(--glass-border);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <a href="#" class="logo-link" onclick="reloadToTop(event)">
+            <!-- OFFICIAL BARANGAY TAGPU-AN SEAL LOGO -->
+            <img src="images/Tagpu-an.jpg" alt="Barangay Tagpu-an Official Seal" class="official-seal-logo">
+            Barangay Tagpu-an
+        </a>
+        <ul>
+            <li><a href="#about">About & History</a></li>
+            <li><a href="#officials">Officials</a></li>
+            <li><a href="#vision-mission">Vision & Mission</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#demographics">Demographics</a></li>
+            <li><a href="#contact">Contact & Map</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero" id="top">
+        <h1>Welcome to Barangay Tagpu-an</h1>
+        <p>Municipality of Tubungan, Province of Iloilo | A community grounded in heritage, natural beauty, and resilience.</p>
+        <a href="#about" class="btn">Discover Our Story</a>
+    </header>
+
+    <div class="container">
+
+        <!-- HISTORY, ORIGIN & CULTURE -->
+        <section id="about">
+            <h2 class="section-title">History, Creation & Culture</h2>
+            <div class="history-grid">
+                
+                <div class="history-card">
+                    <h3><i class="fa-solid fa-hourglass-start"></i> Origin & Etymology</h3>
+                    <p>The name <strong>Tagpu-an</strong> originates from the Hiligaynon word <em>"tagpo"</em> or <em>"tagpu-an"</em>, which translates to "a place of meeting" or "meeting point". Historically, this area served as a strategic rendezvous point for early settlers, traders, and neighboring mountain communities traveling across the scenic terrain of Tubungan.</p>
+                </div>
+
+                <div class="history-card">
+                    <h3><i class="fa-solid fa-landmark"></i> How It Was Created</h3>
+                    <p>In the past, Tagpu-an was a serene rural settlement reliant on subsistence farming and upland agriculture. As Tubungan grew into an established municipality in Iloilo, Tagpu-an was formally delineated into an official barangay under municipal local government administration, fostering structured community governance, local infrastructure, and public services.</p>
+                </div>
+
+                <div class="history-card">
+                    <h3><i class="fa-solid fa-masks-theater"></i> Culture & Traditions</h3>
+                    <p>Deeply rooted in traditional Hiligaynon heritage, Tagpu-an thrives on the spirit of <strong>Bayanihan</strong> (mutual unity). The community celebrates annual religious and agricultural fiestas, honoring patron saints with customary feasts, gatherings, and thanksgiving for peaceful harvests and mountain agriculture.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BARANGAY OFFICIALS SECTION -->
+        <section id="officials" style="margin-top: 60px;">
+            <h2 class="section-title">Barangay Governance & Officials</h2>
+            
+            <!-- Punong Barangay / Captain -->
+            <div class="captain-wrapper">
+                <div class="official-card captain">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80" alt="Barangay Captain" class="official-avatar">
+                    <div class="official-info">
+                        <span class="official-badge"><i class="fa-solid fa-crown"></i> Punong Barangay</span>
+                        <h3>Hon. Barangay Captain</h3>
+                        <p>Executive Governance & Administration</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kagawads & SK Chair & Appointed Officials Grid -->
+            <div class="officials-grid">
+                
+                <div class="official-card">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Kagawad 1" class="official-avatar">
+                    <div class="official-info">
+                        <span class="official-badge">Barangay Kagawad</span>
+                        <h3>Hon. Kagawad 1</h3>
+                        <p>Committee on Peace & Order</p>
+                    </div>
+                </div>
+
+                <div class="official-card">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Kagawad 2" class="official-avatar">
+                    <div class="official-info">
+                        <span class="official-badge">Barangay Kagawad</span>
+                        <h3>Hon. Kagawad 2</h3>
+                        <p>Committee on Appropriations</p>
+                    </div>
+                </div>
+
+                <div class="official-card">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" alt="Kagawad 3" class="official-avatar">
+                    <div class="official-info">
+                        <span class="official-badge">Barangay Kagawad</span>
+                        <h3>Hon. Kagawad 3</h3>
+                        <p>Committee on Agriculture & Environment</p>
+                    </div>
+                </div>
+
+                <div class="official-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Kagawad 4" class="official-avatar">
+                    <div class="official-info">
+                        <span class="official-badge">Barangay Kagawad</span>
+                        <h3>Hon. Kagawad 4</h3>
+                        <p>Committee on Health & Sanitation</p>
+                    </div>
+                </div>
+
+                <div class="official-card">
+                    <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=400&q=80" alt="Kagawad 5" class="official-avatar">
+                    <div class="official-info">
+                        <span class="official-badge">Barangay Kagawad</span>
+                        <h3>Hon. Kagawad 5</h3>
+                        <p>Committee on Infrastructure</p>
+                    </div>
+                </div>
+
+                <div class="official-card">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Kagawad 6" class="official-avatar">
+                    <div class="official-info">
+                        <span class="official-badge">Barangay Kagawad</span>
+                        <h3>Hon. Kagawad 6</h3>
+                        <p>Committee on Education & Culture</p>
+                    </div>
+                </div>
+
+                <div class="official-card">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Kagawad 7" class="official-avatar">
+                    <div class="official-info">
+                        <span class="official-badge">Barangay Kagawad</span>
+                        <h3>Hon. Kagawad 7</h3>
+                        <p>Committee on Ways & Means</p>
+                    </div>
+                </div>
+
+                <!-- SK Chairperson -->
+                <div class="official-card">
+                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80" alt="SK Chairperson" class="official-avatar">
+                    <div class="official-info">
+                        <span class="official-badge" style="background:rgba(227, 242, 253, 0.7); color:#1565c0;">SK Chairperson</span>
+                        <h3>Hon. SK Chairperson</h3>
+                        <p>Youth Development & Sports</p>
+                    </div>
+                </div>
+
+                <!-- Barangay Secretary -->
+                <div class="official-card">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80" alt="Barangay Secretary" class="official-avatar">
+                    <div class="official-info">
+                        <span class="official-badge">Barangay Secretary</span>
+                        <h3>Sec. Barangay Secretary</h3>
+                        <p>Records & Documentation</p>
+                    </div>
+                </div>
+
+                <!-- Barangay Treasurer -->
+                <div class="official-card">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80" alt="Barangay Treasurer" class="official-avatar">
+                    <div class="official-info">
+                        <span class="official-badge">Barangay Treasurer</span>
+                        <h3>Treas. Barangay Treasurer</h3>
+                        <p>Financial Management</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VISION & MISSION -->
+        <section id="vision-mission">
+            <div class="vm-section">
+                <div class="vm-grid">
+                    <div class="vm-box">
+                        <i class="fa-solid fa-eye"></i>
+                        <h3>Our Vision</h3>
+                        <p>To be a peaceful, self-reliant, and ecologically sustainable barangay in Tubungan, guided by transparent governance and an empowered, united community.</p>
+                    </div>
+                    <div class="vm-box">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <h3>Our Mission</h3>
+                        <p>To deliver efficient public services, preserve our cultural heritage, promote sustainable agricultural livelihoods, and safeguard the well-being of every resident in Barangay Tagpu-an.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHOTO GALLERY SECTION -->
+        <section id="gallery">
+            <h2 class="section-title">Achievements & Community Activities</h2>
+            <div class="gallery-grid">
+
+                <div class="gallery-item" onclick="openLightbox('images/tagpuan4.jpg', 'Services & Events')">
+                    <img src="images/tagpuan4.jpg" alt="Services & Events">
+                    <div class="gallery-overlay">
+                        <h4>Community Service</h4>
+                        <p>Local community events and assemblies</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80', 'Community Gathering & Events')">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" alt="Sunrise Hike">
+                    <div class="gallery-overlay">
+                        <h4>Sunrise Trails</h4>
+                        <p>Early morning fog over lush hills</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80', 'Agricultural Fields & Landscapes')">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="Agricultural Fields">
+                    <div class="gallery-overlay">
+                        <h4>Agricultural Lands</h4>
+                        <p>Green fields cultivated by local farmers</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1511497584788-876761c11969?auto=format&fit=crop&w=1200&q=80', 'Forest & Nature Environment')">
+                    <img src="https://images.unsplash.com/photo-1511497584788-876761c11969?auto=format&fit=crop&w=600&q=80" alt="Lush Nature">
+                    <div class="gallery-overlay">
+                        <h4>Natural Heritage</h4>
+                        <p>Preserved forest and natural surroundings</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('images/Tagpuan3.jpg', 'Achievements & Events')">
+                    <img src="images/Tagpuan3.jpg" alt="Community Assembly">
+                    <div class="gallery-overlay">
+                        <h4>Achievements & Events</h4>
+                        <p>Community events and unity in Tagpu-an</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', 'Highland Peaks & Views')">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Highland Peaks">
+                    <div class="gallery-overlay">
+                        <h4>Highland Peaks</h4>
+                        <p>Breathtaking vantage points across Iloilo</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LIGHTBOX MODAL CONTAINER -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="lightbox-close">&times;</span>
+            <img id="lightbox-img" src="" alt="Enlarged Image">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+
+        <!-- POPULATION TRACKER & DEMOGRAPHICS SECTION -->
+        <section id="demographics" style="margin-top: 60px;">
+            <h2 class="section-title">Population & Demographics Tracker</h2>
+
+            <div class="pop-container">
+                <!-- Stat Cards Grid -->
+                <div class="pop-tracker-grid">
+                    <div class="pop-card">
+                        <i class="fa-solid fa-users-line"></i>
+                        <div class="pop-number" data-target="848">0</div>
+                        <label>Total Resident Population (2020 Census)</label>
+                    </div>
+                    <div class="pop-card">
+                        <i class="fa-solid fa-house-user"></i>
+                        <div class="pop-number" data-target="182">0</div>
+                        <label>Registered Households</label>
+                    </div>
+                    <div class="pop-card">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <div class="pop-number" data-target="66">0%</div>
+                        <label>Economically Active (15-64 yrs)</label>
+                    </div>
+                    <div class="pop-card">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <div class="pop-number">3.68%</div>
+                        <label>Share of Tubungan Population</label>
+                    </div>
+                </div>
+
+                <!-- Historical Growth Progress Bar -->
+                <div class="growth-box">
+                    <h4 style="margin-bottom: 15px; color: var(--primary-color); font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-chart-line"></i> Historical Population Growth (1990 - Present)
+                    </h4>
+                    
+                    <div class="progress-label">
+                        <span>1990 Census</span>
+                        <span>502 Residents</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-fill" style="width: 59%;"></div>
+                    </div>
+
+                    <div class="progress-label">
+                        <span>2015 Census</span>
+                        <span>820 Residents</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-fill" style="width: 96%;"></div>
+                    </div>
+
+                    <div class="progress-label">
+                        <span>2020 Official Census</span>
+                        <span>848 Residents (+0.71% Growth)</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT & GOOGLE MAP -->
+        <section id="contact" style="margin-top: 60px;">
+            <h2 class="section-title">Contact Us & Location</h2>
+            <div class="contact-grid">
+                
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 15px; color: var(--primary-color);">Get in Touch</h3>
+                    <form id="contactForm" action="#" method="post" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent to the Barangay Hall.'); this.reset();">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required placeholder="Juan Dela Cruz">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address / Phone</label>
+                            <input type="text" id="email" required placeholder="juan@example.com or 09123456789">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message / Concern</label>
+                            <textarea id="message" required placeholder="State your inquiry or request..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Google Map Embedding -->
+                <div class="map-container">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Tubungan,%20Iloilo,%20Philippines&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Barangay Tagpu-an, Municipality of Tubungan, Iloilo. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JAVASCRIPT FUNCTIONS -->
+    <script>
+        // Reload page & return to top on logo click
+      // Scroll smoothly to top without refreshing
+function reloadToTop(event) {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+        // Lightbox Functions
+        function openLightbox(imageSrc, captionText) {
+            document.getElementById('lightbox-img').src = imageSrc;
+            document.getElementById('lightbox-caption').innerText = captionText;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // Animated Population Counter Trigger
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.pop-number[data-target]');
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const isPercentage = counter.innerText.includes('%');
+                let count = 0;
+                const speed = target / 50;
+
+                const updateCount = () => {
+                    count += speed;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count) + (isPercentage ? '%' : '');
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = target + (isPercentage ? '%' : '');
+                    }
+                };
+                updateCount();
+            });
+        });
+    </script>
+
+</body>
+</html>
